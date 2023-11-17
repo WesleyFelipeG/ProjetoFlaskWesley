@@ -6,7 +6,7 @@ app = Flask(__name__)
 glossario = []
 tarefas = []
 
-# Definindo a variável de ambiente
+# Desativar quando o projeto for finalizado
 os.environ['FLASK_DEBUG'] = 'True'
 
 # Configurando o modo de depuração com base na variável de ambiente
@@ -20,7 +20,7 @@ glossario = [
              ]
 
 @app.route('/')
-def ola():
+def home():
     return render_template('index.html', glossario=glossario)
 
 # Rotas para tarefas
