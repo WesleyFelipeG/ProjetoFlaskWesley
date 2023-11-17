@@ -38,7 +38,6 @@
         {% for tarefa in tarefas %}
             <li>
                 {{ tarefa }}
-                <a href="{{ url_for('alterar_tarefa', tarefa=tarefa) }}">Alterar</a>
                 <a href="{{ url_for('deletar_tarefa', tarefa=tarefa) }}">Deletar</a>
             </li>
         {% endfor %}

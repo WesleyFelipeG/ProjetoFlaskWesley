@@ -23,38 +23,6 @@ glossario = [
 def ola():
     return render_template('index.html', glossario=glossario)
 
-
-@app.route('/Gerenciador_de_Tarefas.html')
-def sobre():
-    return render_template('Gerenciador_de_Tarefas.html')
-
-# Rotas para o glossário
-@app.route('/glossario')
-def listar_glossario():
-    return render_template('glossario.html', glossario=glossario)
-
-@app.route('/glossario/adicionar', methods=['GET', 'POST'])
-def adicionar_termo():
-    if request.method == 'POST':
-        termo = request.form['termo']
-        glossario.append(termo)
-        return redirect(url_for('listar_glossario'))
-    return render_template('adicionar_termo.html')
-
-@app.route('/glossario/alterar/<termo>', methods=['GET', 'POST'])
-def alterar_termo(termo):
-    if request.method == 'POST':
-        novo_termo = request.form['novo_termo']
-        index = glossario.index(termo)
-        glossario[index] = novo_termo
-        return redirect(url_for('listar_glossario'))
-    return render_template('alterar_termo.html', termo=termo)
-
-@app.route('/glossario/deletar/<termo>')
-def deletar_termo(termo):
-    glossario.remove(termo)
-    return redirect(url_for('listar_glossario'))
-
 # Rotas para tarefas
 @app.route('/tarefas.html')
 def listar_tarefas():
@@ -68,7 +36,7 @@ def adicionar_tarefa():
         return redirect(url_for('listar_tarefas'))
     return render_template('adicionar_tarefa.html')
 
-@app.route('/tarefas/alterar/<tarefa>', methods=['GET', 'POST'])
+@app.route('/tarefas/alterar/<tarefa>', methods=['GET', 'POST',])
 def alterar_tarefa(tarefa):
     if request.method == 'POST':
         nova_tarefa = request.form['nova_tarefa']

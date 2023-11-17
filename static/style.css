@@ -48,3 +48,12 @@ header {
 .right-side-menu #todo {
     width: 35px;
 }
+
+p, label, li {
+    font-weight: 700;
+    font-size: 25px;
+}
+
+h1 {
+    font-size: 50px;
+}
