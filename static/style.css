@@ -49,6 +49,79 @@ header {
     width: 35px;
 }
 
+
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.left-side h1 {
+    padding-right: 1110px;
+}
+
+.left-side p {
+    width: 1200px;
+}
+
+.right-side {
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+
+}
+
+.right-side h1 {
+    padding-right: 1060px;
+}
+
+.right-side p {
+    width: 1200px;
+}
+
+.right-side ul {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    padding-left: 300px;
+    gap: 50px;
+}
+
+.primeiroquadrante {
+    display: flex;
+    width: 900px;
+    height: 200px;
+}
+
+.primeiroquadrante li {
+    list-style-type: none;
+    width: 200px;
+    height: 400px;
+}
+
+.segundoquadrante {
+    display: flex;
+    width: 900px;
+    height: 200px;
+}
+
+.segundoquadrante li {
+    list-style-type: none;
+    width: 200px;
+}
+
+.right-side img {
+    width: 200px;
+    border-radius: 30px;
+}
+
+span {
+    color: rgb(132, 119, 179);
+}
+
 p, label, li {
     font-weight: 700;
     font-size: 25px;
@@ -56,4 +129,11 @@ p, label, li {
 
 h1 {
     font-size: 50px;
+}
+
+article {
+    border-top: 5px solid rgb(132, 119, 179);
+    padding-top: 20px;
+    text-align: center;
+    font-weight: 600;
 }
