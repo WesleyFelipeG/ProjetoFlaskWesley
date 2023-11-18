@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href = "../static/style.css" rel = "stylesheet" type = "text/css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&family=Kumbh+Sans:wght@400;700&family=Montserrat:wght@100&family=Poppins:wght@300&family=Ribeye&display=swap" rel="stylesheet">
+    <title>Adicionar Termo</title>
+</head>
+<body>
+    <header>
+		<div class = "left-side-menu">
+			<img ID = "icon" src =  "../static/img/GlossarickIcon.png">
+			<img ID = "logo" src = "../static/img/GlossarickLogo.png">
+		</div>
+
+		<div class = "right-side-menu">
+			<div class = "homeclass">
+				<a href = "/"> <img ID = "home" src = "../static/img/home.png"></a>
+			</div>
+			<div class = "todoclass">
+				<a href = "tarefas.html"> <img ID = "todo" src = "../static/img/todo.png"></a>
+			</div>
+			</nav>
+		</div>
+	</header>
+    
+    <h2>Adicionar Termo</h2>
+    <form method="POST" action="{{ url_for('adicionar_termo') }}">
+        <label for="termo">Termo:</label>
+        <input type="text" name="termo" required>
+        <button type="submit">Adicionar</button>
+    </form>
+</body>
+</html>
