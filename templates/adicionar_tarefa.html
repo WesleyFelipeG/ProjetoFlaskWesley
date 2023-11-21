@@ -28,13 +28,13 @@
 			</nav>
 		</div>
 	</header>
-
-    <h1>Adicionar Tarefa</h1>
-    <form method="POST" action="{{ url_for('adicionar_tarefa') }}">
-        <label for="tarefa">Tarefa:</label>
-        <input type="text" name="tarefa" required>
-        <button type="submit">Adicionar</button>
-    </form>
-	
+	<div class = "menu-tarefas">
+    	<h1>Adicionar Tarefa</h1>
+    	<form method="POST" action="{{ url_for('adicionar_tarefa') }}">
+        	<label for="tarefa">Tarefa:</label>
+        	<input type="text" name="tarefa" required>
+        	<button type="submit">Adicionar</button>
+    	</form>
+	</div>
 </body>
 </html>

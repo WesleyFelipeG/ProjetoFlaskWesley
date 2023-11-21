@@ -137,3 +137,23 @@ article {
     text-align: center;
     font-weight: 600;
 }
+
+
+.menu-tarefas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.menu-tarefas ul {
+    padding: 10px;
+}
+
+.menu-tarefas ul li{
+    display:flex;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 30px;
+}

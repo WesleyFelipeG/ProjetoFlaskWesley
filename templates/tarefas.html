@@ -31,17 +31,18 @@
 			</nav>
 		</div>
 	</header>
+    <div class = "menu-tarefas">
+        <h1>Tarefas</h1>
 
-    <h1>Tarefas</h1>
-
-    <ul>
-        {% for tarefa in tarefas %}
-            <li>
-                {{ tarefa }}
-                <a href="{{ url_for('deletar_tarefa', tarefa=tarefa) }}">Deletar</a>
-            </li>
-        {% endfor %}
-    </ul>
-    <p><a href="{{ url_for('adicionar_tarefa') }}">Adicionar Tarefa</a></p>
+        <ul>
+            {% for tarefa in tarefas %}
+                <li>
+                    {{ tarefa }}
+                    <a href="{{ url_for('deletar_tarefa', tarefa=tarefa) }}">Deletar</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <p><a href="{{ url_for('adicionar_tarefa') }}">Adicionar Tarefa</a></p>
+    </div>
 </body>
 </html>
