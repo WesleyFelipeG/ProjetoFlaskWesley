@@ -179,3 +179,8 @@ article {
     border-width: 2px;
     border-radius: 15px;
 }
+
+input {
+    font-size: large;
+    font-weight: 700;
+}
