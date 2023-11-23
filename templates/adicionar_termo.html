@@ -28,14 +28,21 @@
 			</nav>
 		</div>
 	</header>
-    
-    <h2>Adicionar Termo</h2>
-    <form method="POST" action="{{ url_for('adicionar_termo') }}">
-        <label for="termo">Termo:</label>
-        <input type="text" name="termo" required>
-		<label for="description">Descrição:</label>
-		<textarea for="description" name="description" placeholder="Definição do Termo" required></textarea>
-        <button type="submit">Adicionar</button>
-    </form>
+	{% block conteudo %}
+	<div class = "menu-termos">
+		<h1>Adicionar Termo</h1>
+	<form action="{{ url_for('criar_termo')}}" method="post">
+	  <div class="mb-3">
+		<label for="termo" class="form-label">Termo:</label>
+		<input  class="form-control" id="termo" name="termo" aria-describedby="emailHelp">
+	  </div>
+	  <div class="mb-3">
+		<label for="definicao" class="form-label">Definição:</label>
+		<textarea class="form-control" id="definicao" name="definicao" rows="3"></textarea>
+	  </div>
+	  <button type="submit">Enviar</button>
+	</form>
+	</div>
+	{% endblock %}
 </body>
 </html>

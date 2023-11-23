@@ -1,9 +1,9 @@
 import os
+import csv
 from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-glossario = []
 tarefas = []
 
 # Desativar quando o projeto for finalizado
@@ -14,7 +14,7 @@ app.debug = os.environ.get('FLASK_DEBUG') == 'True'
 
 @app.route('/')
 def home():
-    return render_template('index.html', glossario=glossario)
+    return render_template('index.html')
 
 # Rotas para tarefas
 @app.route('/tarefas.html')
@@ -29,15 +29,6 @@ def adicionar_tarefa():
         return redirect(url_for('listar_tarefas'))
     return render_template('adicionar_tarefa.html')
 
-@app.route('/tarefas/alterar/<tarefa>', methods=['GET', 'POST',])
-def alterar_tarefa(tarefa):
-    if request.method == 'POST':
-        nova_tarefa = request.form['nova_tarefa']
-        index = tarefas.index(tarefa)
-        tarefas[index] = nova_tarefa
-        return redirect(url_for('listar_tarefas'))
-    return render_template('alterar_tarefa.html', tarefa=tarefa)
-
 @app.route('/tarefas/deletar/<tarefa>')
 def deletar_tarefa(tarefa):
     tarefas.remove(tarefa)
@@ -51,13 +42,12 @@ def glossario():
 
     with open(
             'bd_glossario.csv',
-            newline='', encoding='utf-8') as arquivo:
+            encoding='utf-8') as arquivo:
         reader = csv.reader(arquivo, delimiter=';')
         for l in reader:
             glossario_de_termos.append(l)
-
-    return render_template('glossario.html',
-                           glossario=glossario_de_termos)
+            
+    return render_template('glossario.html',glossario=glossario_de_termos)
 
 
 @app.route('/novo_termo')

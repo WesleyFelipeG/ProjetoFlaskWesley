@@ -33,23 +33,29 @@ header {
     width: 200px;
 }
 
-.homeclass, .todoclass {
+.homeclass, .todoclass, .glossarioclass, .plusclass {
     display: flex;
     align-items: center;
     padding: 10px;
 }
 
-.homeclass:hover, .todoclass:hover {transform: scale(1.2);}
+.homeclass:hover, .todoclass:hover, .glossarioclass:hover, .plusclass:hover {transform: scale(1.2);}
 
 .right-side-menu #home {
-    width: 43px;
+    width: 48px;
 }
 
 .right-side-menu #todo {
-    width: 35px;
+    width: 40px;
 }
 
+.right-side-menu #glossario {
+    width: 45px;
+}
 
+.right-side-menu #plus {
+    width: 40px;
+}
 
 .left-side {
     display: flex;
@@ -59,11 +65,12 @@ header {
 }
 
 .left-side h1 {
-    padding-right: 1110px;
+    padding-right: 1080px;
 }
 
 .left-side p {
     width: 1200px;
+    padding-bottom: 50px;
 }
 
 .right-side {
@@ -75,7 +82,7 @@ header {
 }
 
 .right-side h1 {
-    padding-right: 1060px;
+    padding-right: 1040px;
 }
 
 .right-side p {
@@ -180,7 +187,37 @@ article {
     border-radius: 15px;
 }
 
-input {
+input, td{
+    font-size: large;
+    font-weight: 700;
+}
+
+table {
+    padding: 20px;
+    border: 1px solid lightgray;
+}
+
+tbody td{
+    border: 1px solid lightgray;
+}
+
+button #lixo {
+    width: 50px;
+}
+
+.menu-termos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.menu-termos ul {
+    padding: 10px;
+}
+
+.menu-termos, .form-text, button {
     font-size: large;
     font-weight: 700;
 }
