@@ -1,9 +1,9 @@
 import os
+import csv
 from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-glossario = []
 tarefas = []
 
 # Desativar quando o projeto for finalizado
@@ -55,9 +55,8 @@ def glossario():
         reader = csv.reader(arquivo, delimiter=';')
         for l in reader:
             glossario_de_termos.append(l)
-
-    return render_template('glossario.html',
-                           glossario=glossario_de_termos)
+            
+    return render_template('glossario.html',glossario=glossario_de_termos)
 
 
 @app.route('/novo_termo')
