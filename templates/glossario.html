@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="PT_BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href = "../static/style.css" rel = "stylesheet" type = "text/css">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&family=Kumbh+Sans:wght@400;700&family=Montserrat:wght@100&family=Poppins:wght@300&family=Ribeye&display=swap" rel="stylesheet">
-    <title>Adicionar Termo</title>
+    <title>Glossário</title>
+
+    <style>
+
+    </style>
 </head>
 <body>
     <header>
@@ -28,14 +31,18 @@
 			</nav>
 		</div>
 	</header>
-    
-    <h2>Adicionar Termo</h2>
-    <form method="POST" action="{{ url_for('adicionar_termo') }}">
-        <label for="termo">Termo:</label>
-        <input type="text" name="termo" required>
-		<label for="description">Descrição:</label>
-		<textarea for="description" name="description" placeholder="Definição do Termo" required></textarea>
-        <button type="submit">Adicionar</button>
-    </form>
+    <div class = "menu-tarefas">
+        <h1>Glossário</h1>
+
+        <ul>
+            {% for termo in glossario %}
+                <li>
+                    {{ termo }}
+                    <a href="{{ url_for('deletar_termo', termo=termo) }}"> <img ID = "lixo" src = "../static/img/lixo.png"></a>
+                </li>
+            {% endfor %}
+        </ul>
+        <p><a href="{{ url_for('adicionar_termo') }}">Adicionar Termo</a></p>
+    </div>
 </body>
 </html>
